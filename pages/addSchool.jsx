@@ -28,7 +28,8 @@ export default function AddSchool() {
         alert("School added!");
         reset(); // ✅ clear all inputs
       } else {
-        alert("Error adding school");
+        const { error } = await res.json();
+        alert("Error adding school: " + error);
       }
     } catch (err) {
       console.error(err);
