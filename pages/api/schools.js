@@ -5,7 +5,8 @@ export default async function handler(req, res) {
 
   if (req.method === "POST") {
     try {
-      const { name, address, city, state, contact, email_id, image } = req.body;
+      const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
+      const { name, address, city, state, contact, email_id, image } = body;
       if (!name || !email_id || !image || !address || !city || !state || !contact) {
         return res.status(400).json({ error: "All fields are required" });
       }
