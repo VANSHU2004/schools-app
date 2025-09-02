@@ -13,15 +13,12 @@ export default function AddSchool() {
     try {
       // upload image
       const formData = new FormData();
-      formData.append("image", data.image[0]);
-      const uploadRes = await fetch("/api/upload", { method: "POST", body: formData });
-      const { filePath } = await uploadRes.json();
 
       // save school
       const res = await fetch("/api/schools", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, image: filePath }),
+        body: JSON.stringify({ ...data}),
       });
 
       if (res.ok) {
@@ -59,13 +56,12 @@ export default function AddSchool() {
             <input placeholder="Email" {...register("email_id", { required: true, pattern: /^\S+@\S+$/i })} className="w-full p-2 border"/>
             {errors.email_id && <p className="text-red-500 text-sm">Valid email required</p>}
 
-            <div className="flex items-center justify-between">
-                <input type="file" {...register("image", { required: true })} />
-                {/* {errors.image && <p className="text-red-500 text-sm">Image required</p>} */}
-
-                <button disabled={loading} className="bg-blue-500 text-white px-4 py-1 rounded">
+            <input placeholder="Image URL" {...register("image", { required: true })} className="w-full p-2 border"/>
+            {errors.image && <p className="text-red-500">Image URL required</p>}
+            <div className="flex w-full items-center justify-center">
+              <button disabled={loading} className="bg-blue-500 text-white px-4 py-1 rounded w-1/4 mt-3">
                 {loading ? "Saving..." : "Save"}
-                </button>
+              </button>
             </div>
         </form>
         </div>
