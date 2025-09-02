@@ -39,23 +39,29 @@ A **full-stack Next.js + MySQL** web application to manage schools with features
 ```bash
 git clone https://github.com/VANSHU2004/schools-app.git
 cd schools-app
+```
+
 2. Install Dependencies
-bash
+
+```bash
 Copy code
 npm install
+```
 3. Setup Environment Variables
 Create .env.local file:
 
-env
+```env
 Copy code
 DB_HOST=your-db-host
 DB_USER=your-db-user
 DB_PASS=your-db-password
 DB_NAME=schools_db
+```
 4. Run Locally
-bash
+```bash
 Copy code
 npm run dev
+```
 Visit http://localhost:3000.
 
 5. Deploy
