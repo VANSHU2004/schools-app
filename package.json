@@ -1,0 +1,28 @@
+{
+  "name": "schools-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "15.5.2",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "react-hook-form": "7.62.0",
+    "mysql2": "latest",
+    "formidable": "latest"
+  },
+  "devDependencies": {
+  "tailwindcss": "3.4.13",
+  "postcss": "latest",
+  "autoprefixer": "latest",
+  "eslint": "latest",
+  "eslint-config-next": "latest",
+  "eslint-plugin-tailwindcss": "3.18.2"
+}
+
+}
